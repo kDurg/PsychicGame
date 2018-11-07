@@ -25,21 +25,31 @@
         var wins = 0;
         var losses = 0;
         var guessesLeft = 9;
-        var guessedLetters = 0;
+        var guessedLetters = "";
         var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]; 
         
 
         // User input to guess a randomized letter
+        document.onkeyup = function (event) {
+		    console.log (event.key);
         var userGuess = event.key.toLowerCase ();
 
-            // Show letter that was clicked
-            // Randomize the computer guess after user input
-            // Only allowed 9 turns
+            // Show letter that was clicked  
+            // Randomize the computer guess after user input   
+        var computerLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+			console.log ("my guess: " + userGuess + " | Computer guess: " + computerLetter);
+
             // Display the previous guesses
+            document.getElementById ("wins").textContent = wins;
+            document.getElementById ("losses").textContent = losses;
+            document.getElementById ("guesses-left").textContent = guessesLeft;
+            document.getElementById ("guessed-letters").textContent = userGuess;
+            
+            // Only allowed 9 turns
             // Reset after 9 guesses
             // Display Wins and Losses
 
-    
+        }
     </script>
     
 </body>
