@@ -29,16 +29,21 @@
         var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]; 
         
 
-        // User input to guess a randomized letter
+        // User input to guess a randomized letter and convert to lowercase
+        // Show letter that was clicked  
         document.onkeyup = function (event) {
 		    console.log (event.key);
         var userGuess = event.key.toLowerCase ();
 
-            // Show letter that was clicked  
+            // Restrict input to letters
+
             // Randomize the computer guess after user input   
         var computerLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
 			console.log ("my guess: " + userGuess + " | Computer guess: " + computerLetter);
 
+            
+            
+            
             // Display the previous guesses
             document.getElementById ("wins").textContent = wins;
             document.getElementById ("losses").textContent = losses;
@@ -48,6 +53,23 @@
             // Only allowed 9 turns
             // Reset after 9 guesses
             // Display Wins and Losses
+            
+            // set total and remaining guesses
+            var totalGuesses = 0;
+
+            if (userGuess === computerLetter) {
+                wins++;
+            } else {guessesLeft--;
+            totalGuesses++
+            } // need to push these changes
+            console.log ("total Guesses: " + totalGuesses + " | guesses Left: " + guessesLeft)
+                       
+            if (guessesLeft === 0) {
+                losses++;
+                
+                
+                // else {function.Reset}
+            }
 
         }
     </script>
