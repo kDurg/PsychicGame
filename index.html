@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
+    <title>Psych (ic) </title>
+    <link rel = "stylesheet" type = "text/css" href ="assets/css/style.css">
 </head>
 
 
@@ -13,66 +13,13 @@
     <h1>The Psychic Game</h1>
     <h3>Are you Psycic? What letter am I thinking of?</h3>
     <div id="game">
-        <p>Wins: <span id= "wins"></span></p>
-        <p>Losses: <span id= "losses"></span></p>
-        <p>Guesses Left: <span id= "guesses-left"></span></p>
-        <p>Your Guesses So Far: <span id= "guessed-letters"></span></p>
+        <p>Wins: <span id= "wins">0</span></p>
+        <p>Losses: <span id= "losses">0</span></p>
+        <p>Guesses Left: <span id= "guesses-left">9</span></p>
+        <p>Your Guesses So Far:  <span id= "guessed-letters"></span></p>
     </div>
 
-    <script type="text/javascript">
-        
-        //Define vars
-        var wins = 0;
-        var losses = 0;
-        var guessesLeft = 9;
-        var guessedLetters = "";
-        var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]; 
-        
-
-        // User input to guess a randomized letter and convert to lowercase
-        // Show letter that was clicked  
-        document.onkeyup = function (event) {
-		    console.log (event.key);
-        var userGuess = event.key.toLowerCase ();
-
-            // Restrict input to letters
-
-            // Randomize the computer guess after user input   
-        var computerLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
-			console.log ("my guess: " + userGuess + " | Computer guess: " + computerLetter);
-
-            
-            
-            
-            // Display the previous guesses
-            document.getElementById ("wins").textContent = wins;
-            document.getElementById ("losses").textContent = losses;
-            document.getElementById ("guesses-left").textContent = guessesLeft;
-            document.getElementById ("guessed-letters").textContent = userGuess;
-            
-            // Only allowed 9 turns
-            // Reset after 9 guesses
-            // Display Wins and Losses
-            
-            // set total and remaining guesses
-            var totalGuesses = 0;
-
-            if (userGuess === computerLetter) {
-                wins++;
-            } else {guessesLeft--;
-            totalGuesses++
-            } // need to push these changes
-            console.log ("total Guesses: " + totalGuesses + " | guesses Left: " + guessesLeft)
-                       
-            if (guessesLeft === 0) {
-                losses++;
-                
-                
-                // else {function.Reset}
-            }
-
-        }
-    </script>
+    <script src = "javascript/game.js"> </script>
     
 </body>
 </html>

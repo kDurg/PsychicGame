@@ -1,0 +1,17 @@
+body {
+    background-image: url(/Homework/Homework-3/PsychicGame/images/Fig-2-1-Fortune-teller.jpg) ;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+}
+
+#game {
+    width: 600px;
+    margin-left: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+p {
+    font-size: 20px;
+    font-style: bold;
+}
