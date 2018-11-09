@@ -17,12 +17,11 @@
         document.onkeyup = function (event) {
             userGuess = event.key.toLowerCase ();
             console.log (guessesLeft);  
+            guessedLetters.push(userGuess)
 
-            // Display the previous guesses
-            document.getElementById ("wins").textContent = wins;
-            document.getElementById ("losses").textContent = losses;
-            document.getElementById ("guesses-left").textContent = guessesLeft;
-            document.getElementById ("guessed-letters").textContent = guessedLetters;
+            
+
+            
 
             // set remaining guesses
             // Tally and Display Wins and Losses
@@ -34,18 +33,23 @@
                 guessedLetters.length = 0;
                 computerLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
     
-            } else if (guessesLeft === 0) {
+            } else if (guessesLeft === 1) {
                 losses++;
                 computerLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
                 guessesLeft = 9;
-                guessedLetters.length = 0;
+                guessedLetters.length = 1;
 
             } else {
                 guessesLeft--; 
             }
 
-            guessedLetters.push(userGuess)
-            console.log ("my guess: " + userGuess + " | Computer guess: " + computerLetter);        
+            console.log ("my guess: " + userGuess + " | Computer guess: " + computerLetter);
+            
+            // Display the previous guesses
+            document.getElementById ("wins").textContent = wins;
+            document.getElementById ("losses").textContent = losses;
+            document.getElementById ("guesses-left").textContent = guessesLeft;
+            document.getElementById ("guessed-letters").textContent = guessedLetters;
 
 
             // Restrict input to letters   

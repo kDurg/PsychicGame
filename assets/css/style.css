@@ -1,8 +1,8 @@
 body {
-    background-image: url(/Homework/Homework-3/PsychicGame/images/Fig-2-1-Fortune-teller.jpg) ;
+    background-image: url("C:/Users/kyled/OneDrive/Coding/Homework/Homework-3/PsychicGame/images/Fig-2-1-Fortune-teller.jpg") ;
     background-repeat: no-repeat;
-    width: 100%;
-    height: auto;
+    /* width: 100%;
+    height: auto; */
 }
 
 #game {
